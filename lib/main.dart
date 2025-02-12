@@ -1,3 +1,4 @@
+// main.dart
 import 'package:flutter/material.dart';
 import 'package:language_translator/screen/language_translator.dart';
 
@@ -8,13 +9,23 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    title: 'Language Translator Application',
-    debugShowCheckedModeBanner: false,
-      home: LanguageTranslator(),
+      title: 'Translator Master',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF7CB342),
+          secondary: const Color(0xFFE57373),
+        ),
+        useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          elevation: 0,
+        ),
+      ),
+      home: const LanguageTranslator(),
     );
   }
 }
